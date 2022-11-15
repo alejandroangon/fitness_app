@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import '../shared/menu_drawer.dart';
+import '../shared/menu_bottom.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -6,11 +10,13 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Globo Fitness')),
+      appBar: AppBar(title: const Text('Thunder gym')),
+      drawer: const menuDrawer(),
+      bottomNavigationBar: const MenuBotton(),
       body: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('gym.jpg'), fit: BoxFit.cover)),
+                  image: AssetImage('assets/gym.jpg'), fit: BoxFit.cover)),
           child: Center(
               child: Container(
                   padding: const EdgeInsets.all(24),
@@ -18,7 +24,7 @@ class IntroScreen extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       color: Colors.white70),
                   child: const Text(
-                    'Commit to be fit, Lorem ipsum dolor sit amen ',
+                    'No pain - No gain',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 22, shadows: [
                       Shadow(

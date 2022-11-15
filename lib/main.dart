@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:globo_fitness/screens/bmi_screen.dart';
 import 'package:globo_fitness/screens/intro_screen.dart';
 
 void main() {
@@ -10,6 +11,14 @@ class GlobeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: IntroScreen());
+    return MaterialApp(
+      title: 'Thunder gym',
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      routes: {
+        '/': (context) => const IntroScreen(),
+        '/bmi': (context) => const BmiScreen(),
+      },
+      initialRoute: '/',
+    );
   }
 }
